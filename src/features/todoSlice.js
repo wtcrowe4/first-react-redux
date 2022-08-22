@@ -12,7 +12,14 @@ export const todoSlice = createSlice({
             todos.splice(index, 1)
             return { items: todos }
         },
-        toggleItem: (state, action) => state.items[action.payload].completed = !state.items[action.payload].completed,
+        // toggleItem: (state, action) => {
+        //     let todos = [...state.items]
+        //     let index = action.payload
+        //     todos[index].completed = !todos[index].completed
+        //     return { items: todos }
+        // },
+        
+        //state.items[action.payload].completed = !state.items[action.payload].completed,
         clearAll: (state) => {return {items: []}},
     }
 });

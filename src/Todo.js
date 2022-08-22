@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, removeItem, toggleItem, clearAll } from './features/todoSlice';
+import { addItem, removeItem, clearAll } from './features/todoSlice';
+//toggleItem,
 
 const Todo = () => {
     const items = useSelector((state) => state.todo.items)
@@ -10,8 +11,9 @@ const Todo = () => {
     const renderItems = () => {
         return items.map((item, index) => {
             return (
-                <div key={index}>
-                    <input type="checkbox" onChange={() => dispatch(toggleItem(index))} checked={item.completed} />
+                <div key={index} style={{textAlign:"left"}}>
+                    {/* <input type="checkbox" onChange={() => dispatch(toggleItem(index))} checked={item.completed} /> */}
+                    <input type="checkbox" />
                     <span style={{color:"#282c34", fontSize:"1.5rem", textDecoration: item.completed ? 'line-through' : 'none' }}>{item}</span>
                     <button onClick={() => dispatch(removeItem(index))} 
                         style={{fontSize: ".5rem", 
